@@ -18,7 +18,7 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #ffffff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -45,4 +45,29 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #0d6efd !important;
+}
+
+/* Ajuste del contenido para que no se pegue arriba */
+main {
+    margin-top: 2rem;
+}
+
+/* Hacer que el sidebar sea pegajoso si la pantalla es larga */
+.bg-dark {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }

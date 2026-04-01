@@ -7,45 +7,64 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BaseER.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BaseER#14</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark min-vh-100">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    
+                    <div class="py-4 w-100 text-center">
+                        @* Asegúrate de que el nombre coincida con tu archivo: logo.png, logo.jpg, etc. *@
+                        <img src="~/images/logo.png" alt="Logo Exploradores" class="img-fluid" style="max-height: 110px; width: auto;">
+                    </div>
+
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none border-bottom border-secondary w-100">
+                        <span class="fs-5 d-none d-sm-inline fw-bold">Royal Rangers DB</span>
+                    </a>
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100 mt-3" id="menu">
+                        <li class="nav-item w-100">
+                            <a href="/" class="nav-link align-middle px-0 text-white">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Inicio</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">KennethCaballero</a>
+                        <li class="nav-item w-100">
+                            <a href="#" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Miembros</span>
+                            </a>
+                        </li>
+                        <li class="nav-item w-100">
+                            <a href="#" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-calendar-check"></i> <span class="ms-1 d-none d-sm-inline">Asistencias</span>
+                            </a>
+                        </li>
+                        <li class="nav-item w-100">
+                            <a href="#" class="nav-link px-0 align-middle text-white">
+                                <i class="fs-4 bi-graph-up"></i> <span class="ms-1 d-none d-sm-inline">Reportes</span>
+                            </a>
                         </li>
                     </ul>
+                    <hr>
+                    <div class="pb-4">
+                        <small class="text-muted">BaseER#14 - 2026</small>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - BaseER - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div class="col py-3 overflow-auto">
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
