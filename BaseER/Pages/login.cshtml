@@ -1,0 +1,97 @@
+@page
+@model BaseER.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Royal Rangers DB</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            /* Usamos tu imagen fondoER.png */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/fondoER.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .login-card {
+            background: rgba(43, 48, 53, 0.9); /* Un poco transparente para que se vea el fondo */
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(01px); /* Efecto de cristal esmerilado */
+        }
+
+        .login-card img {
+            width: 110px;
+            margin-bottom: 1rem;
+        }
+
+        .form-control {
+            background: rgba(52, 58, 64, 0.8) !important;
+            border: 1px solid #495057;
+            color: white !important;
+            margin-bottom: 1rem;
+        }
+
+        .btn-login {
+            background: #ffc107;
+            border: none;
+            color: black;
+            font-weight: bold;
+            padding: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        .error-msg {
+            color: #ff6b6b;
+            background: rgba(255, 0, 0, 0.1);
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        @* Asegúrate de que el logo esté en la misma carpeta images *@
+        <img src="~/images/logo.png" alt="Logo">
+        <h2 class="text-white mb-4">Royal Rangers DB</h2>
+        
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="error-msg">@Model.ErrorMessage</div>
+        }
+
+        <form method="post">
+            <input type="text" name="usuario" class="form-control" placeholder="Usuario" required>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-login w-100 mt-2">INGRESAR</button>
+        </form>
+    </div>
+
+</body>
+</html>
